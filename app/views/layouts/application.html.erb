@@ -8,18 +8,17 @@
 </head>
 <body>
 <div class="container">
-  <%= render 'shared/flash_messages' unless flash.blank? %>
   <div class="row">
     <div class="span12">
-      <h1><%= link_to 'Imagine Learning', root_path %></h1>
+      <%= render 'shared/flash_messages' unless flash.blank? %>
     </div>
   </div>
 </div>  
 <div class="row">
-  <div class="span9">
+  <div class="span8">
     <%= yield %>
   </div>
-  <div class="span3">
+  <div class="span4">
     <div class="account">
       <%= link_to 'Home', root_path %><br />
       <%= link_to 'Institutions', institutions_path %><br />
