@@ -1,7 +1,30 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+AssignmentType.create(name: 'Assignment')
+AssignmentType.create(name: 'Discussion')
+AssignmentType.create(name: 'Quiz')
+AssignmentType.create(name: 'External Tool')
+AssignmentType.create(name: 'Not Graded')
+
+SubmissionType.create(name: 'None')
+SubmissionType.create(name: 'Online')
+SubmissionType.create(name: 'Hard Copy')
+
+Permission.create(name: 'admin')
+Permission.create(name: 'superintendent')
+Permission.create(name: 'department head')
+Permission.create(name: 'principal')
+Permission.create(name: 'teacher')
+Permission.create(name: 'student')
+
+GradeLevel.create(name: 'K')
+GradeLevel.create(name: '1')
+GradeLevel.create(name: '2')
+GradeLevel.create(name: '3')
+GradeLevel.create(name: '4')
+GradeLevel.create(name: '5')
+GradeLevel.create(name: '6')
+GradeLevel.create(name: '7')
+GradeLevel.create(name: '8')
+GradeLevel.create(name: '9')
+GradeLevel.create(name: '10')
+GradeLevel.create(name: '11')
+GradeLevel.create(name: '12')

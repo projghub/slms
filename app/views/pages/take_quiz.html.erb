@@ -1,0 +1,12 @@
+<h1><%= @quiz.name %></h1>
+
+<%= form_tag '/take_quiz' do %>
+  <%= hidden_field_tag 'quiz[id]', @quiz.id %>
+  <% @questions.each do |question| %>
+    <h2><%= question.name %></h2>
+    <% question.answers.each do |answer| %>
+      <%= radio_button 'quiz[answers]', question.id, answer.id %><%= answer.name %><br />
+    <% end %>
+  <% end %>
+  <%= submit_tag "Complete Quiz" %>
+<% end %>

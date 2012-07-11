@@ -1,0 +1,17 @@
+<h1>Thanks!</h1>
+<p>Your quiz has been submitted!</p>
+<p>You have taken quiz: <%= @myquiz.name %></p>
+
+<% @quizzes_users.each do |question, answer| %>
+  <% 
+    myanswer = Answer.find(answer)
+    myquestion = Question.find(myanswer.question_id)
+  %>
+  <h2><%= myquestion.name %></h2>
+  <p><%= myanswer.name %><br />
+  <% if(myanswer.correct == true) %>
+    <span style="color: green">Correct</span>
+  <% else %>
+    <span style="color: red">Incorrect</span>
+  <% end %>
+<% end %>

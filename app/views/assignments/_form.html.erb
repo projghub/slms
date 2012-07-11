@@ -1,0 +1,38 @@
+<%= form_for @assignment, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :classroom_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :classroom_id, Classroom.all, :id, :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :assignment_type_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :assignment_type_id, AssignmentType.all, :id, :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :submission_type_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.collection_select :submission_type_id, SubmissionType.all, :id, :name %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :date_due, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :date_due, :class => 'datetime_select' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                assignments_path, :class => 'btn' %>
+  </div>
+<% end %>
