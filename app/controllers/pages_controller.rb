@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_filter :require_login, :except => [:index]
+
   def index
   end
 
@@ -21,6 +23,8 @@ class PagesController < ApplicationController
       #logger.info 'QUESTION' +@question.inspect
       @quiz = Quiz.find(@question.quiz_id)
       #logger.info 'QUIZ' +@quiz.inspect
+
+      #logger.info 'USER' + @user.inspect
 
       QuizzesUsers.create(
         user_id: @user.id,

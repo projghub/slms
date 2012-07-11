@@ -1,16 +1,16 @@
 <h3>Institutions</h3>
 <% Institution.all.each do |institution| %>
-<%= link_to institution.name, institution_path(institution) %><br />
+  <%= link_to institution.name, institution_path(institution) %><br />
 <% end %>
 
 <h3>Teachers</h3>
 <% Classroom.all.each do |classroom| %>
-  <%= link_to classroom.user.first_name, user_path(classroom.teacher_id) %> (<%= classroom.name %>)<br />
+  <%= link_to classroom.teacher.first_name, user_path(classroom.teacher_id) %> (<%= classroom.name %>)<br />
 <% end %>
 
 <h3>Courses</h3>
 <% Classroom.all.each do |classroom| %>
-<%= link_to classroom.name, classroom_path(classroom) %><br />
+  <%= link_to classroom.name, classroom_path(classroom) %><br />
 <% end %>
 
 <h3>Assignments</h3>

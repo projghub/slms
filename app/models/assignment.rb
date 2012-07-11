@@ -3,8 +3,8 @@ class Assignment < ActiveRecord::Base
 
   belongs_to :classroom
   has_many :quizzes
-  has_many :assignment_types#, :class_name => "AssignmentType", :foreign_key => "assignment_type_id"
-  has_many :submission_types
+  belongs_to :assignment_type
+  belongs_to :submission_type
 
   validates :name, presence: true
 end

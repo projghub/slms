@@ -16,9 +16,9 @@
     <% @assignments.each do |assignment| %>
       <tr>
         <td><%= link_to assignment.name, assignment_path(assignment) %></td>
-        <td><%= assignment.assignment_type_id %></td>
-        <td><%= assignment.submission_type_id %></td>
-        <td><%= assignment.date_due %></td>
+        <td><%= assignment.assignment_type.name unless assignment.assignment_type.blank? %></td>
+        <td><%= assignment.submission_type.name unless assignment.submission_type.blank? %></td>
+        <td><%= assignment.date_due.strftime("%b %d, %y") %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_assignment_path(assignment), :class => 'btn btn-mini' %>

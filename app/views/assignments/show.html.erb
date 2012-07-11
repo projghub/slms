@@ -5,13 +5,13 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:assignment_type_id) %>:</strong></dt>
-  <dd><%= @assignment.assignment_type_id %></dd>
+  <dd><%= @assignment.assignment_type.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:submission_type_id) %>:</strong></dt>
-  <dd><%= @assignment.submission_type_id %></dd>
+  <dd><%= @assignment.submission_type.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
   <dd><%= @assignment.name %></dd>
   <dt><strong><%= model_class.human_attribute_name(:date_due) %>:</strong></dt>
-  <dd><%= @assignment.date_due %></dd>
+  <dd><%= @assignment.date_due.strftime("%b %d, %y") %></dd>
 </dl>
 
 <div class="form-actions">

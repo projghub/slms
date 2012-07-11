@@ -9,5 +9,5 @@ class Classroom < ActiveRecord::Base
   has_many :classrooms_users
   has_many :users, :through => :classrooms_users
 
-  belongs_to :user, :class_name => "User", :foreign_key => "teacher_id"
+  belongs_to :teacher, :class_name => "User", :foreign_key => "teacher_id"
 end
