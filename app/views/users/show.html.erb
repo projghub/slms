@@ -3,6 +3,7 @@
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
 </div>
 
+<div class="page-content" style="height: 200px;">
   <dl class="dl-horizontal">
     <dt><strong><%= model_class.human_attribute_name(:facebook_user_id) %>:</strong></dt>
     <dd><%= @user.facebook_user_id %></dd>
@@ -25,15 +26,11 @@
     <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
     <dd><%= @user.phone %></dd>
   </dl>
+</div>
 
 <h3>Classrooms</h3>
 <% @user.classrooms.each do |classroom| %>
   <%= link_to classroom.name, classroom_path(classroom) %><br />
-<% end %>
-
-<h3>Scores</h3>
-<% @quizzes.each do |quiz| %>
-  <%= debug quiz %>
 <% end %>
 
 <div class="form-actions">
