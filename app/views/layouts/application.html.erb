@@ -10,7 +10,16 @@
 <div class="container">
   <div class="row">
     <div class="span12">
-      <%= render 'shared/flash_messages' unless flash.blank? %>
+      <%= link_to 'Home', root_path %> |
+      <%= link_to 'Institutions', institutions_path %> |
+      <%= link_to 'Users', users_path %> |
+      <%= link_to 'Classrooms', classrooms_path %> |
+      <%= link_to 'Assignments', assignments_path %> |
+      <%= link_to 'Quizzes', quizzes_path %> |
+      <%= link_to 'Questions', questions_path %> |
+      <%= link_to 'Answers', answers_path %> |
+      <%= link_to 'Grade Levels', grade_levels_path %>
+  <%= render 'shared/flash_messages' unless flash.blank? %>
     </div>
   </div>
 </div>  
@@ -19,18 +28,7 @@
     <%= yield %>
   </div>
   <div class="span4">
-    <div class="account">
-      <%= link_to 'Home', root_path %><br />
-      <%= link_to 'Institutions', institutions_path %><br />
-      <%= link_to 'Users', users_path %><br />
-      <%= link_to 'Classrooms', classrooms_path %><br />
-      <%= link_to 'Assignments', assignments_path %><br />
-      <%= link_to 'Quizzes', quizzes_path %><br />
-      <%= link_to 'Questions', questions_path %><br />
-      <%= link_to 'Answers', answers_path %><br />
-      <%= link_to 'Grade Levels', grade_levels_path %><br />
-    </div>
-    <iframe src="https://www.facebook.com/plugins/like.php?href=http://0.0.0.0:3000/&amp;send=false&amp;layout=button_count&amp;show_faces=false&amp;action=like&amp;appId="
+        <iframe src="https://www.facebook.com/plugins/like.php?href=http://0.0.0.0:3000/&amp;send=false&amp;layout=button_count&amp;show_faces=false&amp;action=like&amp;appId="
       scrolling="no" frameborder="0"
       style="border:none; width:75px; height:25px; overflow:hidden;" allowTransparency="true">
     </iframe><br />
