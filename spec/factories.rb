@@ -1,4 +1,8 @@
 FactoryGirl.define do
+#  factory :conway do
+#
+#  end
+
   factory :answer do
     sequence(:name) { |n| "Answer #{n}" }
   end

@@ -5,7 +5,7 @@
 
 <h3>Teachers</h3>
 <% Classroom.all.each do |classroom| %>
-  <%= link_to classroom.teacher.first_name, user_path(classroom.teacher_id) %> (<%= classroom.name %>)<br />
+  <%= (link_to classroom.teacher.first_name, user_path(classroom.teacher_id)) unless classroom.teacher.blank? %> (<%= classroom.name %>)<br />
 <% end %>
 
 <h3>Courses</h3>
