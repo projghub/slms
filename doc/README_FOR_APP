@@ -1,2 +1,92 @@
-Use this README file to introduce your application and point to useful places in the API for learning more.
-Run "rake doc:app" to generate API documentation for your models, controllers, helpers, and libraries.
+What classes are my friends taking?
+What friends are in this class?
+Add "Display name" to Users
+Have ability to change profile picture
+Have a graph API post to people's walls
+Have ability for Teachers to give awards to Students
+Have a report card for Students
+Teachers shall be able to tag classrooms
+
+Requirements
+General
+- All users shall be able to sign up through Facebook
+- All users shall be able to see when assignments are due for a class
+- Keep track of page views for Students/Teachers
+- Content shall be served from Amazon S3 CDN
+- Facebook shall be used as the authentication
+- Facebook will request Basic Info (Email also)
+- Graph API will post on a Students wall when they complete an assignment
+- The canvas application shall use Twitter Bootstrap for Responsive CSS
+- Each model shall have unit tests
+- Have a development, staging, and production environment setup
+- Ability to integrate with SIF/School Net/
+
+Students
+- Students shall be able to sign up for classes
+- Students shall be able to upload completed assignments [pdf, doc]
+- Students shall be able to see their grades or test scores
+- Students should be able to comment on a Teachers Profile
+- Students should be able to have a private discussion with a teacher
+- Students shall be able to use their mobile phone to take a multiple question quiz
+- Student shall be able to only take a Quiz once
+- Students shall be able to drop out of a class
+- Students shall not be able to join a class if after the "join" cut off
+- Students shall not be able to join a class after the end date
+- Format all the date times and have a jQueryUIDatePicker
+
+Teachers
+- Teachers shall be able to setup classrooms
+- Teachers shall be able to setup tests/quizzes
+- Teachers shall be able to upload videos/assets/whatever
+- Teachers shall be able to grade quizzes  (shall multiple choice quizzes be auto-graded?)
+- Teachers shall be able to create tests.
+- Teachers shall be able to create questions assigned to tests
+- Teachers shall be able to create answers assigned to questions
+- Teachers shall be able to rate the content
+- Teachers should be able to comment on a Students Profile
+- Teachers shall be able to create static pages such as syllabus, course info, etc.
+- Teachers shall be able to make announcements to Students
+- Teachers shall be able to cancel their class
+
+Reports
+- Report Card
+how many students are in a class
+how many classes a teacher has
+
+
+Every User is a Student/Teacher.  They can create classes or join a class.
+
+OAuth2.0 for 3rd party app authentication
+
+
+Lori-Ann
+1)	When you login it doesn’t look like it. The logout button appears but the sign up for facebook icon is still at the top.
+2)	Report/contact button doesn’t work.
+3)	 Needs instructions or about page.  Otherwise user doesn’t know what it’s supposed to do or how.
+4)	When you check out users- the  edit and destroy buttons are on TOP of user info.
+5)	Needs a save button not just edit and destroy.
+6)	 Teachers can join classes
+7)	No differentiation between teachers and students in login. All can access everything.  Restrict access
+8)	 No way to take the tests or quizzes.  Teachers can’t even add a link to the quiz or attach a file to download.
+9)	Quizzes empty. Only names of them.
+10)	Users see questions but no place to enter the data.
+11)	Facebook is too public and their privacy problems would cause problems for districts, states and federal   student privacy laws.
+12)	 No purpose to grade levels- classes can’t be added to them, no content in them.  NADA.
+13)	 If a user likes the app- the link from facebook page is not useable.
+14)	No district is going to accept the ability to share their school login page, assignments and list of students  to anyone who  clicks on the link that is shared freely. No login needed besides being a facebook  member.  (link on anothers page doesn’t work)
+15)	 Due dates not in a standard format.  Needs to be USA standard.
+16)	The  2nd day  end slots  go from 00-23 and need to go from (none) to 31 as the days in a month.
+17)	The last drop down on this page isn’t time or hour. No idea what it stands for- and it doesn’t show up in the listed assignment anyway.
+18)	If it is hour  what is hour 59 I ask of you? 0-59
+19)	It’s pointless to be able to  go back to 2007 for assignments due.
+20)	It should autofill to the current year and date and changeable from there.
+21)	 On  a mac the link to the app says only “Something went wrong” in red, even after login. (when the user pastes in address of app) firefox and safari and on XP.
+22)	When you logout on the PC it says We're sorry, but something went wrong.” And user is still logged in to facebook it seems but as soon as they try.
+23)	Link also doesn’t work once logged off of the app.  On PC 7 
+24)	 Link doesn’t work on a mac when liked either.
+25)	After first click from the email sent to get to the app. Reclicking on it doesn’t work ‘something went wrong’ is all you get.
+26)	User can delete all users creating the above error. Shouldn’t be possible. Then users are no longer authenticated…
+27)	Needs an admin account.
+28)	In quizzes it needs to force you to have a correct answer.
+
+1. Login incorrectly 3 times to get error page. Web page not expandable to see the entire message.

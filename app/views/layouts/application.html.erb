@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Imagine Learning</title>
+  <title>Learning Management System</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,6 +10,8 @@
 <div class="container">
   <div class="row">
     <div class="span12">
+      <iframe src="https://www.facebook.com/plugins/like.php?href=http://0.0.0.0:3000/&amp;send=false&amp;layout=button_count&amp;show_faces=false&amp;action=like&amp;appId=<%= FACEBOOK_APP_ID %>" scrolling="no" frameborder="0" style="border:none; width:80px; height:20px; overflow:hidden;" allowTransparency="true">
+      </iframe><%= facebook_login_button('small') %><div id="fb-root"></div><%= link_to "My Profile", profile_path(@user.id) if logged_in? %><br />
       <%= link_to 'Home', root_path %> |
       <%= link_to 'Institutions', institutions_path %> |
       <%= link_to 'Users', users_path %> |
@@ -19,21 +21,15 @@
       <%= link_to 'Questions', questions_path %> |
       <%= link_to 'Answers', answers_path %> |
       <%= link_to 'Grade Levels', grade_levels_path %>
-  <%= render 'shared/flash_messages' unless flash.blank? %>
     </div>
   </div>
 </div>  
-<div class="row">
-  <div class="span8">
-    <%= yield %>
-  </div>
-  <div class="span4">
-        <iframe src="https://www.facebook.com/plugins/like.php?href=http://0.0.0.0:3000/&amp;send=false&amp;layout=button_count&amp;show_faces=false&amp;action=like&amp;appId="
-      scrolling="no" frameborder="0"
-      style="border:none; width:75px; height:25px; overflow:hidden;" allowTransparency="true">
-    </iframe><br />
-    <%= facebook_login_button('small') %>
-    <div id="fb-root"></div>
+<div class="container">
+  <div class="row">
+    <div class="span12">
+      <%= render 'shared/flash_messages' unless flash.blank? %>
+      <%= yield %>
+    </div>
   </div>
 </div>
 </body>

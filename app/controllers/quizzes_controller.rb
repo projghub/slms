@@ -1,35 +1,14 @@
 class QuizzesController < ApplicationController
-  # GET /quizzes
-  # GET /quizzes.json
   def index
     @quizzes = Quiz.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @quizzes }
-    end
   end
 
-  # GET /quizzes/1
-  # GET /quizzes/1.json
   def show
     @quiz = Quiz.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @quiz }
-    end
   end
 
-  # GET /quizzes/new
-  # GET /quizzes/new.json
   def new
     @quiz = Quiz.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @quiz }
-    end
   end
 
   # GET /quizzes/1/edit

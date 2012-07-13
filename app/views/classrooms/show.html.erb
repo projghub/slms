@@ -5,7 +5,7 @@
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:teacher_id) %>:</strong></dt>
-  <dd><%= @classroom.teacher_id %></dd>
+  <dd><%= (link_to @classroom.teacher.first_name, user_path(@classroom.teacher)) unless @classroom.teacher.blank? %></dd>
   <dt><strong><%= model_class.human_attribute_name(:grade_level_id) %>:</strong></dt>
   <dd><%= @classroom.grade_level_id %></dd>
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
@@ -13,12 +13,12 @@
   <dt><strong><%= model_class.human_attribute_name(:reference) %>:</strong></dt>
   <dd><%= @classroom.reference %></dd>
   <dt><strong><%= model_class.human_attribute_name(:date_start) %>:</strong></dt>
-  <dd><%= @classroom.date_start %></dd>
+  <dd><%= @classroom.date_start.strftime("%b %d, %Y") %></dd>
   <dt><strong><%= model_class.human_attribute_name(:date_end) %>:</strong></dt>
-  <dd><%= @classroom.date_end %></dd>
+  <dd><%= @classroom.date_end.strftime("%b %d, %Y") %></dd>
 </dl>
 
-<%= link_to "Join Class", join_class_path(@classroom.id)%>
+<%= link_to "Join Class", join_class_path(@classroom.id), :class => 'btn btn-primary' %>
 
 <h1>Students</h1>
 <% @classroom.users.each do |user| %>

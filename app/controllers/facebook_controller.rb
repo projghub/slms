@@ -1,5 +1,4 @@
 class FacebookController < ApplicationController
-
   before_filter :facebook_auth
   before_filter :require_login, :except => :login
 

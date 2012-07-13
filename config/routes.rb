@@ -15,8 +15,7 @@ Lms::Application.routes.draw do
   match '/take_quiz/:id' => 'pages#take_quiz', :as => 'take_quiz', :via => 'get'
   match '/take_quiz' => 'pages#take_quiz_create', :as => 'take_quiz_create', :via => 'post'
   match '/join_class/:id' => 'pages#join_class', :as => 'join_class', :via => 'get'
-
-  match '/conway' => 'conways#index', :as => 'conway'
+  match '/profile/:id' => 'users#show', :as => 'profile', :via => 'get'
 
   root :to => 'pages#index'
 end

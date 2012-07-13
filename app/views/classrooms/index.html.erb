@@ -16,17 +16,12 @@
     <% @classrooms.each do |classroom| %>
       <tr>
         <td><%= link_to classroom.name, classroom_path(classroom) %><br /><%= classroom.reference %></td>
-        <td><%= classroom.teacher.first_name %></td>
+        <td><%= classroom.teacher.first_name unless classroom.teacher.blank? %></td>
         <td><%= classroom.date_start.strftime("%b %d, %y") %></td>
         <td><%= classroom.date_end.strftime("%b %d, %y") %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_classroom_path(classroom), :class => 'btn btn-mini' %>
-          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-                      classroom_path(classroom),
-                      :method => :delete,
-                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
-                      :class => 'btn btn-mini btn-danger' %>
         </td>
       </tr>
     <% end %>
