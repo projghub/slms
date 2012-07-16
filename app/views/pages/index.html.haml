@@ -1,0 +1,32 @@
+%h1 Learn. Teach. Grow.
+
+%p Anyone can be a teacher or Student.  If you create a classroom, you become a teacher.  If you join a classroom, you are a Student.
+
+%h3 Institutions
+%p If you want to group many Teachers together, create an institution!
+- Institution.all.each do |institution|
+ = link_to institution.name, institution_path(institution)
+ %br
+
+%h3 Teachers
+%p To become a Teacher, all you need to do is create a Classroom.
+- Classroom.all.each do |classroom|
+ = (link_to classroom.teacher.first_name, user_path(classroom.teacher_id)) unless classroom.teacher.blank?
+ = "( #{classroom.name} )"
+ %br
+ 
+%h3 Courses
+%p After you become a Teacher (start a classroom), you are able to create courses!  Create a cooking class, or tutorial videos on Rock Climbing!
+- Classroom.all.each do |classroom|
+ = link_to classroom.name, classroom_path(classroom)
+ 
+%h3 Assignments
+%p After you create a Course, you can add assignments.  You can choose how much the assignment affects the final grade by modifying the 'weight'.
+- Assignment.all.each do |assignment|
+ = link_to assignment.name, assignment_path(assignment)
+ = assignment.classroom.name
+ 
+%h3 Quiz
+%p You can create a multiple choice Quiz as an Assignment.  A Quiz will consist of Questions and Answers.  You are can choose the "right" Answer to your Question.
+- Quiz.all.each do |quiz|
+ = link_to quiz.name, take_quiz_path(quiz)

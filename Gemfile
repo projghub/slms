@@ -1,16 +1,19 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
+gem 'haml'
 gem 'pg'
 gem 'twitter-bootstrap-rails'
 gem 'koala'
 gem 'jquery-rails'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'sqlite3'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'guard'
 end
 
 group :assets do

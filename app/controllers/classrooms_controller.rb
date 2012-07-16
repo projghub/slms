@@ -1,4 +1,6 @@
 class ClassroomsController < ApplicationController
+  before_filter :require_login, except: [:index, :show]
+
   def index
     @classrooms = Classroom.all
   end
