@@ -8,6 +8,7 @@ gem 'twitter-bootstrap-rails'
 gem 'koala'
 gem 'jquery-rails'
 gem 'will_paginate'
+gem 'faraday'
 
 group :development, :test do
   gem 'sqlite3'
