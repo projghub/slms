@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
 gem 'haml'
+gem 'icalendar'
 gem 'pg'
 gem 'twitter-bootstrap-rails'
 gem 'koala'

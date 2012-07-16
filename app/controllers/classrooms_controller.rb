@@ -38,6 +38,13 @@ class ClassroomsController < ApplicationController
     end
   end
 
+  def export_calendar
+    @event = Event.where(:id => params[:id]).first
+    respond_to do |format|
+      format.ics
+    end
+  end
+
 #  def destroy
 #    @classroom = Classroom.find(params[:id])
 #    @classroom.destroy
